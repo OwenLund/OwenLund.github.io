@@ -42,18 +42,76 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Adaptive Optics</h2>
+						<h2>Week 8 notes</h2>
 					</header>
-					<p>Adaptive Optics .... </p>
-				
-					<video width="480" height="320" controls="controls">
-					<source src="images/filtered.mp4" type="video/mp4">
-					</video>
-					
-					<p>Vis accumsan feugiat adipiscing nisl amet adipiscing accumsan blandit accumsan sapien blandit ac amet faucibus aliquet placerat commodo. Interdum ante aliquet commodo accumsan vis phasellus adipiscing. Ornare a in lacinia. Vestibulum accumsan ac metus massa tempor. Accumsan in lacinia ornare massa amet. Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet Ac interdum ac non praesent. Cubilia lacinia interdum massa faucibus blandit nullam. Accumsan phasellus nunc integer. Accumsan euismod nunc adipiscing lacinia erat ut sit. Arcu amet. Id massa aliquet arcu accumsan lorem amet accumsan commodo odio cubilia ac eu interdum placerat placerat arcu commodo lobortis adipiscing semper ornare pellentesque.</p>
-					<p>Amet nibh adipiscing adipiscing. Commodo ante vis placerat interdum massa massa primis. Tempus condimentum tempus non ac varius cubilia adipiscing placerat lorem turpis at. Aliquet lorem porttitor interdum. Amet lacus. Aliquam lobortis faucibus blandit ac phasellus. In amet magna non interdum volutpat porttitor metus a ante ac neque. Nisi turpis. Commodo col. Interdum adipiscing mollis ut aliquam id ante adipiscing commodo integer arcu amet blandit adipiscing arcu ante.</p>
+					<center><h2> Reconstructor </h2></center>
+					<p> Below are some videos of the soapy simulation slopes after they have been converted into Zernike Modes. The first video shows the unfiltered measurements of Zernike slopes measured by the Shack-Hartmann Wavefront Sensor. By averaging the tip & tilt of all Subapertures it is possible to show only these two Zernike modes in video 2.
+						The third video shows the remaining Zernike Modes ( up to the 30th)</p>
 
+					<table border="1" class="alt">
+					<tr>
+					<td><center>Unfiltered simulation</center></td>
+					<td><center>Tip-Tilt</center></td>
+					<td><center>Remaining Zernike Modes</center></td>
+					</tr>
+					<tr>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/filtered.mp4" type="video/mp4">
+						</video>
+					</td>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/tiptilt.mp4" type="video/mp4">
+						</video>
+					</td>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/unfiltered.mp4" type="video/mp4">
+						</video>
+					</td>
+					</tr>
+					
+					<tr>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/Filteredgraph.mp4" type="video/mp4">
+						</video>
+					</td>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/tiptiltgraph.mp4" type="video/mp4">
+						</video>
+					</td>
+					<td>
+						<video width="360" height="320" autoplay loop>
+						<source src="images/Unfilteredgraph.mp4" type="video/mp4">
+						</video>
+					</td>
+					</tr>
+					</table>
+					<br><br>
+					<center><h2> Residual Errors from Last Week </h2></center>
+					<p>
+						<span class="image left">
+							<img src="images/Residuals.png"/>
+						</span> 
+					<br><br>
+					Last week I found some unexpected residual zernike errors from the results of the FeedForward network.
+					It appeared to show that the Networks predictions consistently underestimated the tip and tilt zernike modes.
+					This was surprising as I had thought that if the network was not fully trained, the errors would be larger, yet still have an mean value of 0.
+					</p>
+					<br><br><br>
+					<p><span class="image right">
+					<video width="360" height="320" autoplay loop>
+					<source src="images/Residuals.mp4" type="video/mp4">
+					</video> </span>
+					<br><br><br>
+					In this video we can see the residual errors of the network prediction seem to have a general trend to them.
+					It would appear that the top left of the Wavefront Sensor is consistently red while the bottom right is blue.
+					This implies that the network training is not performing as well as expected.
+					</p>
+					<br><br><br><br><br><br>
 				</div>
 			</section>
 
