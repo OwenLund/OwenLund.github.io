@@ -41,30 +41,32 @@
 				<div class="container">
 
 					<header class="major special">
-						<h2>Week 9 notes</h2>
+						<h2>Week 8 notes</h2>
 					</header>
-					<center><h2> Results from Slopes Based Predictor </h2></center>
+					<center><h2> Reconstructor </h2></center>
+					<p> Below are some videos of the soapy simulation slopes after they have been converted into Zernike Modes. The first video shows the unfiltered measurements of Zernike slopes measured by the Shack-Hartmann Wavefront Sensor. By averaging the tip & tilt of all Subapertures it is possible to show only these two Zernike modes in video 2.
+						The third video shows the remaining Zernike Modes ( up to the 30th)</p>
 
 					<table border="1" class="alt">
 					<tr>
-					<td><center>Measured Zernikes</center></td>
-					<td><center>Predictions</center></td>
-					<td><center>Residuals Zernike Modes</center></td>
+					<td><center>Unfiltered simulation</center></td>
+					<td><center>Tip-Tilt</center></td>
+					<td><center>Remaining Zernike Modes</center></td>
 					</tr>
 					<tr>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Measured_image.mp4" type="video/mp4">
+						<source src="images/filtered.mp4" type="video/mp4">
 						</video>
 					</td>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Predictions_image.mp4" type="video/mp4">
+						<source src="images/tiptilt.mp4" type="video/mp4">
 						</video>
 					</td>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Residuals_image.mp4" type="video/mp4">
+						<source src="images/Unfiltered.mp4" type="video/mp4">
 						</video>
 					</td>
 					</tr>
@@ -72,70 +74,43 @@
 					<tr>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Measured_graph.mp4" type="video/mp4">
+						<source src="images/Filteredgraph.mp4" type="video/mp4">
 						</video>
 					</td>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Predictions_graph.mp4" type="video/mp4">
+						<source src="images/tiptiltgraph.mp4" type="video/mp4">
 						</video>
 					</td>
 					<td>
 						<video width="360" height="320" autoplay loop>
-						<source src="images/Residuals_graph.mp4" type="video/mp4">
+						<source src="images/Unfilteredgraph.mp4" type="video/mp4">
 						</video>
 					</td>
 					</tr>
 					</table>
 					<br><br>
-					
-					
-					<center><h2> Results from filtered Predictor </h2></center>
-
-					<table border="1" class="alt">
-					<tr>
-					<td><center>Measured Zernikes</center></td>
-					<td><center>Predictions</center></td>
-					<td><center>Residuals Zernike Modes</center></td>
-					</tr>
-					<tr>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Measured_imagefilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Predictions_imagefilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Residuals_imagefilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					</tr>
-					
-					<tr>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Measured_graphfilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Predictions_graphfilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					<td>
-						<video width="360" height="320" autoplay loop>
-						<source src="images/Residuals_graphfilt.mp4" type="video/mp4">
-						</video>
-					</td>
-					</tr>
-					</table>
+					<center><h2> Residual Errors from Last Week </h2></center>
+					<p>
+						<span class="image left">
+							<img src="images/Residuals.png"/>
+						</span> 
 					<br><br>
-					
+					Last week I found some unexpected residual zernike errors from the results of the FeedForward network.
+					It appeared to show that the Networks predictions consistently underestimated the tip and tilt zernike modes.
+					This was surprising as I had thought that if the network was not fully trained, the errors would be larger, yet still have an mean value of 0.
+					</p>
+					<br><br><br>
+					<p><span class="image right">
+					<video width="360" height="320" autoplay loop>
+					<source src="images/Residuals.mp4" type="video/mp4">
+					</video> </span>
+					<br><br><br>
+					In this video we can see the residual errors of the network prediction seem to have a general trend to them.
+					It would appear that the top left of the Wavefront Sensor is consistently red while the bottom right is blue.
+					This implies that the network training is not performing as well as expected.
+					</p>
+					<br><br><br><br><br><br>
 				</div>
 			</section>
 
