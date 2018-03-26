@@ -1,132 +1,51 @@
-@import '../libs/vars';
-@import '../libs/functions';
-@import '../libs/mixins';
-
 ///
-/// Retrospect by TEMPLATED
-/// templated.co @templatedco
-/// Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+/// Editorial by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
 /* Header */
 
-	$header_palette: 'accent2';
-
-	body {
-		padding-top: 3.125em;
-
-		&.landing {
-			padding-top: 0;
-		}
-
-		@include breakpoint(medium) {
-			padding-top: 44px;
-		}
-	}
-
 	#header {
-		background: darken(_palette($header_palette, bg), 12);
-		color: _palette($header_palette, fg);
-		cursor: default;
-		height: 3.25em;
-		left: 0;
-		line-height: 3.25em;
-		position: fixed;
-		text-align: right;
-		top: 0;
-		width: 100%;
-		z-index: _misc(z-index-base) + 1;
+		@include vendor('display', 'flex');
+		border-bottom: solid 5px _palette(accent);
+		padding: 6em 0 1em 0;
+		position: relative;
 
-		> h1 {
-			color: _palette($header_palette, fg-bold);
-			display: inline-block;
-			height: inherit;
-			left: 1.25em;
-			line-height: inherit;
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			top: 0;
+		> * {
+			@include vendor('flex', '1');
+			margin-bottom: 0;
+		}
 
-			a {
+		.logo {
+			border-bottom: 0;
+			color: inherit;
+			font-family: _font(family-heading);
+			font-size: 1.125em;
+		}
+
+		.icons {
+			text-align: right;
+		}
+
+		@include breakpoint(xlarge) {
+			padding-top: 5em;
+		}
+
+		@include breakpoint(small) {
+			padding-top: 6.5em;
+
+			.logo {
 				font-size: 1.25em;
-			}
-		}
-
-		a {
-			@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
-			color: _palette($header_palette, fg-bold);
-			display: inline-block;
-			margin-right: 1.25em;
-			text-decoration: none;
-
-			&[href="#nav"] {
-				@include icon('\f0c9');
-				-webkit-tap-highlight-color: rgba(0,0,0,0);
-
-				&:before {
-					margin: 0 0.5em 0 0;
-				}
+				margin: 0;
 			}
 
-			& + a[href="#nav"]:last-child {
-				border-left: solid 1px _palette($header_palette, border);
-				padding-left: 1.25em;
-				margin-left: 0.5em;
-			}
-		}
-
-		&.alt {
-			background-color: transparent;
-			font-size: 1.25em;
-			padding: 1em 2em;
-			position: absolute;
-
-			> h1 {
-				color: inherit;
-				position: static;
-				float: left;
-			}
-
-			a[href="#nav"] {
-				margin-right: 0;
-			}
-		}
-	}
-
-	@include breakpoint(medium) {
-		body {
-			padding-top: 44px;
-		}
-
-		#header {
-			height: 44px;
-			line-height: 44px;
-
-			> h1 {
-				left: 1em;
-
-				a {
-					font-size: 1em;
-				}
-			}
-
-			&.alt {
-				font-size: 1em;
-			}
-		}
-	}
-
-	@include breakpoint(xsmall) {
-		#header {
-			min-width: 320px;
-
-			> h1 {
-				left: 1em;
-			}
-
-			&.alt {
-				padding: 0.5em 1em;
+			.icons {
+				height: (6.25em / 1.25);
+				line-height: (6.25em / 1.25);
+				position: absolute;
+				right: (-0.625em / 1.25);
+				top: 0;
 			}
 		}
 	}
